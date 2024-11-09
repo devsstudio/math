@@ -205,7 +205,7 @@ export class MathHelper {
 
       infix = infix.replace(/ /g, wildcard);
 
-      var a1 = [infix]; console.log(a1);
+      var a1 = [infix]; //console.log(a1);
       var aux = [];
       var a2 = [];
       var op = MathHelper.OPERATORS;
@@ -233,9 +233,9 @@ export class MathHelper {
         a1 = a2;
         a2 = [];
       }
-      console.log('a1', a1);
+      // console.log('a1', a1);
       var postfix = MathHelper.convertToPostFix(a1, variables);
-      console.log('postfix', postfix);
+      // console.log('postfix', postfix);
       var a_postfix = postfix.trim().split(' ');
       var operandsStack: any[] = [];
 
