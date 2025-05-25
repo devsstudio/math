@@ -75,42 +75,42 @@ export class MathHelper {
     var a = new Big(x);
     var b = new Big(y);
     var c = a.plus(b);
-    return c.round(fixed).toNumber();
+    return fixed !== undefined ? c.round(fixed).toNumber() : c.toNumber();
   }
 
   static minus(x: Big.BigSource, y: Big.BigSource, fixed: number | undefined = undefined): number {
     var a = new Big(x);
     var b = new Big(y);
     var c = a.minus(b);
-    return c.round(fixed).toNumber();
+    return fixed !== undefined ? c.round(fixed).toNumber() : c.toNumber();
   }
 
   static mul(x: Big.BigSource, y: Big.BigSource, fixed: number | undefined = undefined): number {
     var a = new Big(x);
     var b = new Big(y);
     var c = a.mul(b);
-    return c.round(fixed).toNumber();
+    return fixed !== undefined ? c.round(fixed).toNumber() : c.toNumber();
   }
 
   static div(x: Big.BigSource, y: Big.BigSource, fixed: number | undefined = undefined): number {
     var a = new Big(x);
     var b = new Big(y);
     var c = a.div(b);
-    return c.round(fixed).toNumber();
+    return fixed !== undefined ? c.round(fixed).toNumber() : c.toNumber();
   }
 
   static mod(x: Big.BigSource, y: Big.BigSource, fixed: number | undefined = undefined): number {
     var a = new Big(x);
     var b = new Big(y);
     var c = a.mod(b);
-    return c.round(fixed).toNumber();
+    return fixed !== undefined ? c.round(fixed).toNumber() : c.toNumber();
   }
 
   static pow(x: Big.BigSource, y: Big.BigSource, fixed: number | undefined = undefined): number {
     var a = new Big(x);
     var b = new Big(y);
     var c = a.pow(b.toNumber());
-    return c.round(fixed).toNumber();
+    return fixed !== undefined ? c.round(fixed).toNumber() : c.toNumber();
   }
 
   static floor(x: Big.BigSource, fixed: number = 0): number {
