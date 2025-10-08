@@ -124,7 +124,7 @@ export class MathHelper {
     return a.round(fixed, mode).toNumber();
   }
 
-  static convertToPostFix(infix: string[], variables: { [key: string]: string } | false = false) {
+  static convertToPostFix(infix: string[], variables: { [key: string]: number } | false = false) {
 
     var operatorsStack: any[] = [];
 
@@ -139,7 +139,7 @@ export class MathHelper {
 
           //Si es una variable lo reemplaza siempre y cuando haya variables para reemplazar
           if (variables !== false && variables[infix[i]] != null) {
-            postfix += ' ' + variables[infix[i]];
+            postfix += ' ' + variables[infix[i]].toString();
           } else//Si no pasa como un operando
           {
             if (variables === false) {
@@ -198,7 +198,7 @@ export class MathHelper {
     return postfix;
   }
 
-  static calcExpression(infix: string, variables: { [key: string]: string } | false = false, fixed: number = 2) {
+  static calcExpression(infix: string, variables: { [key: string]: number } | false = false, fixed: number = 2) {
     try {
       //alert(infix);
       var wildcard = ',';
